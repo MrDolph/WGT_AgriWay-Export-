@@ -1,0 +1,637 @@
+@font-face {
+    font-family: 'mogula Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('mogula Regular'), url('assets/font/Mogula-8MWLM.woff') format('woff');
+    }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+/* // <uniquifier>: Use a unique and descriptive class name
+    // <weight>: Use a value from 100 to 900
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+} */
+
+.headContainer {
+    background: linear-gradient(rgba(2, 0, 0, 0.05),rgba(0, 0, 0, 0)), url("assets/bg.jpeg") no-repeat center center;
+    background-size: 100%;
+    background-position: top;
+    width: 100%;
+    height: 64em; /* Using 1024px according to the figma design */
+    padding-top: 0;
+    margin-top: 0;
+    font-weight: 600;
+} 
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto 7rem;
+    padding-top: 1.65rem;
+    z-index: 1;
+}
+
+.header a{
+    text-decoration: none;
+    color: #000;
+}
+.logoArea{
+    display: flex;
+    align-items: center;
+}
+nav{
+    display: flex;
+    gap: 3rem;
+}
+
+.onboardArea{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.onboardArea .signUp{
+    background-color: antiquewhite;
+    border-radius: 20px;
+    padding: 10px;
+}
+.SearchCartArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.heroIntro {
+    position: relative; /* Set the position to relative for absolute positioning of children */
+    text-align: left; /* Center align text if desired */
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.heroIntro img {
+    width: 80%; /* Make the image responsive, adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the image absolutely */
+    top: 40% ; /* Align to the top */
+    left: 2%; /* Align to the left */
+    z-index: 1; /* Ensure the image is behind the text */
+}
+
+.heroIntro h1 {
+    position: relative; /* Position relative to the parent */
+    z-index: 2; /* Ensure text is on top */
+    color: #000; /* Change the text color for visibility against the image */
+    padding: 6rem 8rem 6rem 6rem; /* Optional: add padding for better spacing */
+    width: 88%;
+    font-size: 3.5rem;
+}
+
+.dashLine hr{
+    display: inline-flex;
+    align-items: center;
+    border: 4px solid black;
+    width: 8%;
+    margin: 0.625rem;
+}
+
+.design{
+    background: linear-gradient(45deg, #ff6b6b, #f4c430, #1e90ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroSliderWords{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7rem 8rem;
+    color: #fff;
+    width: 100%;
+}
+
+.leftHero{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.leftHero ul li{
+    list-style: none;
+}
+
+.rightHero{
+    width: 40%;
+}
+
+.callToAction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 6rem;
+    padding-top: 4rem;
+    width: 100%;
+}
+
+.checkSol a, .exploreMore a{ 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.checkSol a{
+    background-color: aliceblue;
+    padding: 0.625rem;
+    border-radius: 1.25rem;
+    color: #000;
+}
+
+.exploreMore a{
+    color: #fff;
+    padding-right: 8rem;
+}
+
+/* sectionTwoContent begins */
+
+.sectionTwoContent{
+    margin-inline: 6rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.sectionTwoContent span{
+    font-weight: bold;
+}
+.sectionTwoContent p{
+    width: 75%;
+    font-size: 2.25rem;
+}
+
+/* sectionThreeContent Begins */
+.sectionThreeContent{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-inline: 6rem;
+    margin-block: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sectionThreeContent p{
+    padding-bottom: .5rem;
+}
+
+.sectionThreeContent .imageCards{
+    display: flex;
+    padding-top: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.sectionThreeContent .imageCards img{
+    width: 100%;
+}
+
+.sectionThreeContent .imageCards .image p{
+    text-align: center;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+
+/* sectionfourContent begins */
+
+.sectionFourContent{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    margin-inline: 6rem;
+    margin-block: 2rem;
+}
+
+.sectionFourHeader{
+    display: grid;
+    align-items: center;
+    padding-block: 2rem;    
+}
+
+.sectionFourHeader p{
+    font-size: 2.25rem;
+    font-weight: 600;
+    padding-bottom: 0.625rem;
+}
+
+.sectionFourHeader img{
+    padding-left: 13.75rem;
+}
+
+.fancyNumContent1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 2rem 0 0 4rem;
+}
+
+.fancyNumContent1 .numContent{
+    width: 80%;
+    background-color: #D5FD8F58;
+    padding: 0.725rem;
+    margin-left: -30px;
+}
+
+.fancyNumContent2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 4rem 0 0 14rem;
+}
+
+.fancyNumContent2 .numContent{
+    width: 80%;
+    background-color: #D5FD8F58;
+    padding: 0.725rem;
+}
+
+.fancyNumContent3{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 4rem 0 0 6rem;
+}
+
+.fancyNumContent3 .numContent{
+    width: 80%;
+    background-color: #D5FD8F58;
+    padding: 0.725rem;
+    margin-left: -30px;
+}
+
+.fancyNumContent1 .num, 
+.fancyNumContent2 .num, 
+.fancyNumContent3 .num{
+    font-weight: 800;
+    font-size: 2rem;
+    position: relative;
+    bottom: -38px;
+    left: 40px;
+    color: #000;
+    z-index: 2;
+    /* background-color: #f4c430; */
+
+}
+
+.fancyNumContent1 img,
+.fancyNumContent2 img,
+.fancyNumContent3 img{
+    position: absolute;
+    z-index: 1;
+    /* background-color: #ff6b6b; */
+}
+
+/* section five begins */
+
+.sectionFiveContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    color: #fff;
+    background: linear-gradient(rgba(13, 22, 21, 1),rgba(73, 124, 118, 1));
+    padding-block: 6rem;
+    margin-top: 6rem;
+}
+
+.sectionFiveContent h1{
+    text-align: center;
+    width: 60%;
+    padding-bottom: 2rem;
+}
+.sub-Mail{
+    display: flex;
+    align-items: center;
+    margin-left: 12rem;
+    gap: 1.25rem;
+}
+
+.sub-Mail input{
+    padding: 2rem 5rem 2rem 1rem;
+    border-radius: 2.5rem;
+    border: none;
+    height: 2.5rem;
+    width: 34rem;
+    font-size: 1.25rem;
+    position: relative;
+}
+
+.sub-Mail .join-btn{
+    display: flex;
+    background-color: #D5FD8F;
+    border-radius: 2rem;
+    padding: .8rem;
+    color: #000;
+    font-weight: 600;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -180px;
+}
+
+.sub-Mail .join-btn a{
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+
+/* Section six begins */
+.sectionSixContent{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    margin: 2rem 6rem 0 6rem;   
+}
+.sectionSix{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.sectionSixHeader img{
+    /* padding-left: 7rem; */
+    padding: .5rem 0 1rem 7rem;
+}
+
+.sectionSixSubHead{
+    text-align: center;
+    padding: 0 0 1rem 0;
+}
+.imgCluster{
+    position: relative;
+    padding-right: 50px;
+}
+
+.clusterMain1{
+    position: relative;
+    /* top: -100px; */
+}
+
+.clusterMain1 img{
+    border-radius: 1rem;
+}
+
+.clusterMain2{
+    position: relative;
+    top: -120px;
+    left: 120px;
+}
+
+.imgAvatatCont{
+    display: flex;
+}
+
+.imgContent1,
+.imgContent2{
+    display: flex;
+}
+
+.sectionSixTextContent{
+    width: 50%;
+    line-height: 32px;
+}
+
+.avatarId{
+    text-align: right;
+}
+
+.imgContent3 img{
+    border-radius: 100%;
+    background-color: #000;
+    /* color: #000; */
+}
+
+/* SectionSeven  begins*/
+
+.sectionSevenContent{
+    background: #24231D;
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    margin-top: 4rem;
+    margin-inline:0;
+    padding: 6rem;
+    width: 100%;
+    color: #A5A49A;
+    font-size: 14px;
+    gap: 4rem;
+}
+.partOne{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.partOne img{
+    width: 70%;
+}
+
+.partOne p{
+    width: 269.04px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.iconsSocial {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 1rem;
+    margin: .5rem 0;
+}
+
+.partOne .iconsSocial .icon{
+    width: 100%;
+    
+}
+.partOne .iconsSocial img{
+    width: 90%;
+    background-color: #1F1E17;
+    padding: .5rem;
+    border-radius: 100%;
+}
+.partTwo{
+    display: grid;
+    /* flex-direction: column; */
+}
+
+.partTwo .fancyList{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.partTwo h2{
+    padding-bottom: 0.5rem;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+}
+.partTwo .list{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.25rem;
+}
+
+.partThree{
+    display: grid;
+    flex-direction: column;
+    /* flex-shrink: 1;
+    flex-grow: 1; */
+    /* flex-wrap: nowrap; */
+}
+
+.partThree h2{
+    padding-bottom: 0.5rem;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+.partThree .fancyList{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;   
+}
+
+.partThree .list{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 1.25rem;
+}
+
+.partThree .list img{
+    padding: 0.375rem;
+}
+
+.partThreeMail{
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+    gap: 1.2rem;
+}
+
+.partThreeMail input{
+    padding: 1.5rem 5rem 1.5rem 1rem;
+    border-radius: 2.5rem;
+    border: none;
+    height: 2rem;
+    width: 20rem;
+    font-size: 1.25rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.partThreeMail .join-btn{
+    display: flex;
+    background-color: #D5FD8F;
+    border-radius: 2rem;
+    padding: .5rem;
+    color: #000;
+    font-weight: 600;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -70px;
+    top: 10px;
+}
+
+.partThreeMail .join-btn a{
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.sectionSevenContentExtra{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    padding: 2rem 4rem;
+    max-width: 100%;
+    color: #fff;
+}
+
+.sectionSevenContentExtra .rightExtra span{
+    padding-inline: 1rem;
+}
+
+.sectionSevenContentExtra .leftExtra span{
+    font-style: italic;
+    font-family: cursive;
+    position: relative;
+}
+
+.fontiFooter{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.fontiFooter h1{
+    width: 100%;
+    /* height: 594px; */
+    font-size: 340px;
+    font-family: 'mogula Regular';
+    font-weight: 100;
+    padding: 2.5rem;
+} 
+.topers{
+    width: 180px;
+    position: relative;
+    z-index: 2;
+    top: -245px;
+    left: 975px;
+}
+.topers a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 1rem;
+    background-color: #D5FD8F;
+    padding: .8rem;
+    border-radius: 2rem;
+    width: 90%;
+    color: #042C2C;
+    font-size: 1rem;
+    font-weight: 600;   
+}
+
