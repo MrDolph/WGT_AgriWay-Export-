@@ -1,0 +1,78 @@
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+
+body {  
+    font-family: Arial, sans-serif;  
+    background-image: url('https://s3-alpha-sig.figma.com/img/b1d4/801f/569c0ea7fadf56032795b64bb8dfc910?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BcdC5yPy4-S9LAXieenBLsozk1RsWrgFYE~B~WkkZx8aXOMNMcHk5ole07r8z8RJFHKrbSYcUMiB0KkoJ21FVobp1RYBwSM9pkn8ozLKq0T8ygELScZ4dXKnzJbGQrr4wsQpCBILmwo1cAPwIqa636oA9n5l~OimYsYbsGPZTeixKTJZHyRHWTxDCOrLyXa8WDGV-irYNGGu5kF5txaFRBU0VTygxgqMf0txvi4jdlrPl2x8VUKebNNv1CNfEEzAU2t2vr3dTGIRH9tO4Vfr1a87r16InXGjIXApCAwUU7P7Etny2V0~VZmAFNpPKKX6TeWrrImZSDI82z3wc0K3LA__'); /* Replace with your image URL */  
+    background-size: cover;  
+    color: #042C2C;  
+}  
+
+header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 20px;  
+    background-color: none;  
+}  
+
+.logo {  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+nav ul {  
+    list-style: none;  
+    display: flex;  
+}  
+
+nav ul li {  
+    margin: 0 15px;  
+}  
+
+nav a {  
+    color:#042C2C ;  
+    text-decoration: none;  
+}  
+
+.signup {  
+    background-color: #f9faf9;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+}  
+
+main {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    text-align: center;  
+}  
+
+.container {  
+    background-color: rgba(255, 255, 255, 0.8);  
+    padding: 40px;  
+    border-radius: 10px;  
+}  
+
+.button-group {  
+    margin-top: 20px;  
+}  
+
+.role-button {  
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    padding: 15px 30px;  
+    margin: 0 10px;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-size: 16px;  
+}  
+
+.role-button:hover {  
+    background-color: #45a049;  
+} 
