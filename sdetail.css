@@ -1,0 +1,147 @@
+ /*   * {  
+    box-sizing: border-box;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+body {  
+    font-family: Arial, sans-serif;  
+    background-image: url('https://s3-alpha-sig.figma.com/img/b1d4/801f/569c0ea7fadf56032795b64bb8dfc910?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BcdC5yPy4-S9LAXieenBLsozk1RsWrgFYE~B~WkkZx8aXOMNMcHk5ole07r8z8RJFHKrbSYcUMiB0KkoJ21FVobp1RYBwSM9pkn8ozLKq0T8ygELScZ4dXKnzJbGQrr4wsQpCBILmwo1cAPwIqa636oA9n5l~OimYsYbsGPZTeixKTJZHyRHWTxDCOrLyXa8WDGV-irYNGGu5kF5txaFRBU0VTygxgqMf0txvi4jdlrPl2x8VUKebNNv1CNfEEzAU2t2vr3dTGIRH9tO4Vfr1a87r16InXGjIXApCAwUU7P7Etny2V0~VZmAFNpPKKX6TeWrrImZSDI82z3wc0K3LA__');  
+    background-size: cover;  
+    background-position: center;  
+    color: #042C2C;  
+}  
+
+ 
+/*header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 20px;  
+    background: none;
+}
+
+header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 20px;  
+    background-color: none; 
+}
+
+  
+
+.nav-links {  
+    list-style: none;  
+    display: flex;  
+    
+  
+}  
+
+.nav-links li {  
+    margin: 0 15px;  
+    color:#ccc;
+    
+}  
+
+.nav-links a {  
+    text-decoration: none;  
+    color: #042C2C;  
+    left: 0px;
+    
+}  
+*/
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+
+body {  
+    font-family: Arial, sans-serif;  
+    background-image: url('https://s3-alpha-sig.figma.com/img/b1d4/801f/569c0ea7fadf56032795b64bb8dfc910?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BcdC5yPy4-S9LAXieenBLsozk1RsWrgFYE~B~WkkZx8aXOMNMcHk5ole07r8z8RJFHKrbSYcUMiB0KkoJ21FVobp1RYBwSM9pkn8ozLKq0T8ygELScZ4dXKnzJbGQrr4wsQpCBILmwo1cAPwIqa636oA9n5l~OimYsYbsGPZTeixKTJZHyRHWTxDCOrLyXa8WDGV-irYNGGu5kF5txaFRBU0VTygxgqMf0txvi4jdlrPl2x8VUKebNNv1CNfEEzAU2t2vr3dTGIRH9tO4Vfr1a87r16InXGjIXApCAwUU7P7Etny2V0~VZmAFNpPKKX6TeWrrImZSDI82z3wc0K3LA__'); /* Replace with your image URL */  
+    background-size: cover;  
+    color: black;  
+}  
+
+header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 20px;  
+    background-color: none;  
+}  
+
+.logo {  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+nav ul {  
+    list-style: none;  
+    display: flex;  
+}  
+
+nav ul li {  
+    margin: 0 15px;  
+}  
+
+nav a {  
+    color:#042C2C ;  
+    text-decoration: none;
+}
+
+.sign-up {  
+    background-color: #fff;  
+    color: #042C2C;  
+    padding: 8px 15px;  
+    border-radius: 5px;  
+}  
+
+.form-container {  
+    background-color: rgba(255, 255, 255, 0.9);  
+    border-radius: 10px;  
+    padding: 20px;  
+    max-width: 400px;  
+    margin: 100px auto;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+}  
+
+h2 {  
+    margin-bottom: 20px;  
+    text-align: center;  
+}  
+
+form {  
+    display: flex;  
+    flex-direction: column;  
+}  
+
+input {  
+    margin-bottom: 15px;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+}  
+
+button {  
+    padding: 10px;  
+    background-color: #042C2C;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+button:hover {  
+    background-color: #042C2C;  
+}  
+
+p {  
+    text-align: center;  
+}  
+
+p a {  
+    color: #042C2C;  
+    text-decoration: none;  
+}  
