@@ -23,6 +23,12 @@
   font-weight: 600;
   font-style: normal;
 } */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
 
 .headContainer {
     position: relative;
@@ -57,7 +63,7 @@
 .content {
     position: relative;
     z-index: 3; /* Positioned above the overlay */
-    color: white; /* Ensure text is visible */
+    color: #fff; /* Ensure text is visible */
     font-weight: 600;
     /* padding: 20px; */
     text-align: center;
@@ -74,8 +80,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
-    margin: 0rem 6rem 5rem 6rem;
+    width: 100%;
+    padding: 0rem 6rem 6rem 6rem;
     /* margin-inline: 6rem; */
     /* background-color: red; */
 }
@@ -83,21 +89,22 @@
 .header a{
     text-decoration: none;
     color: #000;
-    font-weight: 600;
 }
 
 .logoArea{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 2rem;
+    /* background-color: red; */
 }
 
 nav{
     display: flex;
-    gap: 3rem;
-    padding-inline: 50px;
-    /* padding-block: 20px; */
+    gap: 2rem;
+    /* width: 100%; */
+    padding-inline: 5px;
+    padding-block: 20px;
     /* background-color: #f4c430; */
 }
 
@@ -143,7 +150,7 @@ nav{
     top: 30% ; /* Align to the top */
     left: 8%; /* Align to the left */
     /* z-index: 3; Ensure the image is behind the text */
-    opacity: 0.5;
+    opacity: 1;
     border: none;
 }
 
@@ -151,17 +158,19 @@ nav{
     position: relative; /* Position relative to the parent */
     z-index: 2; /* Ensure text is on top */
     color: #000; /* Change the text color for visibility against the image */
-    padding: 2rem 6rem 2rem 6rem; /* Optional: add padding for better spacing */
+    padding: 0rem 6rem 2rem 6rem; /* Optional: add padding for better spacing */
     width: 100%;
-    font-size: 4.5vw;
+    font-size: clamp(1rem, 5vw, 4rem);
     font-weight: 700;
     /* background-color: red; */
 }
 
 .dashLine hr{
     display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    border: 2px solid black;
+    border: 1px solid black;
     width: 8%;
     margin-block: 2%;
 }
@@ -225,7 +234,7 @@ nav{
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1.25rem);
     text-decoration: none;
 }
 
@@ -233,7 +242,7 @@ nav{
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1.25rem);
     text-decoration: none;
     color: #fff;
 }
@@ -255,7 +264,7 @@ nav{
 }
 .sectionTwoContent p{
     width: 75%;
-    font-size: 2.25rem;
+    font-size: clamp(1rem, 5vw, 2.25rem);
 }
 
 /* sectionThreeContent Begins */
@@ -268,6 +277,19 @@ nav{
     justify-content: space-between;
     align-items: flex-start;
     background-color: greenyellow;
+    width: 100%;
+}
+.sectionThreeHead{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: center;
+    /* background-color: #ff6b6b; */
+    width: 100%;
+}
+
+.sectionThreeHead img{
+    padding-left: 3rem;
 }
 
 .sectionThreeContent p{
@@ -279,7 +301,7 @@ nav{
     padding-top: 1.25rem;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
 }
 
@@ -301,19 +323,20 @@ nav{
     /* align-items: center; */
     /* justify-content: space-between; */
     padding-inline: 6rem;
-    padding-block: 2rem;
+    padding-block: 3rem;
     background-color: gold;
     width: 100%;
+    /* height: 100%; */
 }
 
 .sectionFourHeader{
     display: grid;
     align-items: center;
-    padding-block: 2rem;    
+    padding-block: 1rem;    
 }
 
 .sectionFourHeader p{
-    font-size: 2.25rem;
+    font-size: clamp(1rem, 5vw, 2.25rem);
     font-weight: 600;
     padding-bottom: 0.625rem;
 }
@@ -401,6 +424,7 @@ nav{
     background: linear-gradient(rgba(13, 22, 21, 1),rgba(73, 124, 118, 1));
     padding-block: 6rem;
     padding-top: 6rem;
+    width: 100%;
 }
 
 .sectionFiveContent h1{
@@ -457,6 +481,7 @@ nav{
     /* justify-content: space-between; */
     padding: 2rem 6rem 0 6rem;
     background-color: #D5FD8F;   
+    width: 100%;
 }
 .sectionSix{
     display: flex;
@@ -506,7 +531,7 @@ nav{
 
 .sectionSixTextContent{
     width: 50%;
-    line-height: 32px;
+    line-height: 1.875rem;
 }
 
 .avatarId{
@@ -531,7 +556,7 @@ nav{
     padding: 6rem;
     width: 100%;
     color: #A5A49A;
-    font-size: 14px;
+    font-size: clamp(1rem, 5vw, 1rem);
     gap: 4rem;
 }
 .partOne{
@@ -545,9 +570,9 @@ nav{
 }
 
 .partOne p{
-    width: 269.04px;
-    line-height: 30px;
-    font-size: 14px;
+    width: 16.815rem;
+    line-height: 1.875rem;
+    font-size: clamp(1rem, 5vw, 1rem);
     font-weight: 500;
 }
 .iconsSocial {
@@ -581,7 +606,8 @@ nav{
 .partTwo h2{
     padding-bottom: 0.5rem;
     font-size: 14px;
-    line-height: 26px;
+    font-size: clamp(1rem, 5vw, 1rem);
+    line-height: 1.625rem;
     font-weight: 500;
 }
 .partTwo .list{
@@ -602,8 +628,8 @@ nav{
 
 .partThree h2{
     padding-bottom: 0.5rem;
-    font-size: 14px;
-    line-height: 26px;
+    font-size: clamp(1rem, 5vw, 1rem);
+    line-height: 1.625rem;
     font-weight: 500;
 }
 
@@ -637,7 +663,7 @@ nav{
     border: none;
     height: 2rem;
     width: 20rem;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1.25rem);
     position: relative;
     margin-top: 1rem;
 }
@@ -663,7 +689,7 @@ nav{
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 5vw, 1.2rem);
 }
 
 .sectionSevenContentExtra{
@@ -686,27 +712,37 @@ nav{
     position: relative;
 }
 
+/* footer section */
+
+.footer{
+    position: relative;
+    width: 100%;
+}
+
 .fontiFooter{
     width: 100%;
     position: relative;
     z-index: 0;
-    display: flex;
+    /* display: flex; */
+    background-color: goldenrod;
 }
 
 .fontiFooter h1{
     width: 100%;
-    /* height: 594px; */
-    font-size: 26vw;
+    height: 100%;
+    font-size: 26.5vw;
     font-family: 'mogula Regular';
-    font-weight: 100;
-    padding: 2.5rem;
+    background-color: pink;
 } 
 .topers{
     width: 180px;
-    position: relative;
-    z-index: 2;
-    top: -245px;
-    left: 975px;
+    position: absolute;
+    z-index: 100;
+    bottom: 160px;
+    right: 160px;
+    /* top: -210px;
+    left: 400px; */
+    /* background-color: red; */
 }
 .topers a{
     display: inline-flex;
@@ -728,6 +764,7 @@ nav{
 /* @media (min-width: 768px) and (max-width: 1024px) {} */
 
 /* Mobile-friendly adjustments */
+
 @media (max-width: 768px) {
     .background-image {
         width: 100%;
@@ -774,7 +811,7 @@ nav{
     .onboardArea, .onboardArea a, .onboardArea .login, .onboardArea .signUp, .SearchCartArea img, nav a{
         display: none;
         color: #fff;
-        background-color: red;
+        /* background-color: red; */
     }
 
     .menu-icon{
@@ -791,7 +828,7 @@ nav{
         color: #000; /* Change the text color for visibility against the image */
         padding: 0rem 2rem 2rem 3rem; /* Optional: add padding for better spacing */
         width: 90%;
-        font-size: 2rem;
+        /* font-size: 2rem; */
         display: block;
         /* background-color: red; */
     }
@@ -811,9 +848,10 @@ nav{
         width: 5.625rem;
         position: absolute;
         z-index: 2;
-        top: -5.65625rem; /* Dividing -15.3125rem by 2 = 7.65625*/
-        left: 20.46875rem; /* dividing 60.9375rem by 2 = 30.46875
-    } */
+        top: -5.65625rem;      /* Dividing -15.3125rem by 2 = 7.65625*/
+        /* left: 20.46875rem;   } /* dividing 60.9375rem by 2 = 30.46875 */
+
+
     .topers a{
         position: relative;
         display: inline-flex;
