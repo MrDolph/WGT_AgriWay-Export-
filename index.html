@@ -13,6 +13,17 @@
 </head>
 <body>
     <div class="container">
+        <div id="dev-banner">
+            This site is currently under development. Some features may not be fully functional.
+            <button onclick="closeBanner()">Dismiss</button>
+        </div>
+        <script>
+            function closeBanner() {
+              document.getElementById("dev-banner").style.display = "none";
+            }
+          </script>
+        
+          <!-- Your main content -->
         <div class="headContainer">
             <img src="assets/bg.jpeg" alt="Background" class="background-image">
             <div class="overlay">
