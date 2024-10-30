@@ -28,6 +28,7 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
+    font-size: clamp(.5rem, 1vw, 2.5rem);
 }
 
 .headContainer {
@@ -78,12 +79,15 @@
 
 .header{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 0rem 6rem 6rem 6rem;
-    /* margin-inline: 6rem; */
+    padding: 2rem;
+    margin: 0;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+    font-weight: 800;
     /* background-color: red; */
+    width: 100%;
 }
 
 .header a{
@@ -94,25 +98,36 @@
 .logoArea{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    /* background-color: red; */
+    justify-content: center;
+    /* padding: 2rem; */
+    /* padding-block: 1rem; */
+    /* background-color: greenyellow; */
+    width: 100%;
 }
 
-nav{
+.logoArea img{
+    width: 100%;
+}
+
+.header nav{
     display: flex;
-    gap: 2rem;
-    /* width: 100%; */
-    padding-inline: 5px;
-    padding-block: 20px;
+    justify-content: space-between;
+    /* gap: 1rem;  */
+    /* padding: .5rem; */
+    padding-block: 1.7rem;
     /* background-color: #f4c430; */
+    width: 100%;
 }
 
 .onboardArea{
     display: flex;
     align-items: center;
+    justify-content: right;
+    padding-block: 1rem;
     gap: 1rem;
-    padding-left: 10rem;
+    /* padding-left: 10rem; */
+    width: 100%;
+    /* background-color: #1e90ff; */
 }
 
 .onboardArea .signUp{
@@ -123,10 +138,13 @@ nav{
 
 .SearchCartArea{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding-right: 5rem;
+    /* padding-right: 5rem; */
+    width: 100%;
+    padding-block: 1rem;
+    /* background-color: aliceblue; */
 }
 
 .close-icon, .menu-icon{
@@ -147,7 +165,7 @@ nav{
     width: 80%; /* Make the image responsive, adjust as necessary */
     height: auto; /* Maintain aspect ratio */
     position: absolute; /* Position the image absolutely */
-    top: 30% ; /* Align to the top */
+    top: 40% ; /* Align to the top */
     left: 8%; /* Align to the left */
     /* z-index: 3; Ensure the image is behind the text */
     opacity: 1;
@@ -158,7 +176,7 @@ nav{
     position: relative; /* Position relative to the parent */
     z-index: 2; /* Ensure text is on top */
     color: #000; /* Change the text color for visibility against the image */
-    padding: 0rem 6rem 2rem 6rem; /* Optional: add padding for better spacing */
+    padding: 6rem 6rem 3rem 6rem; /* Optional: add padding for better spacing */
     width: 100%;
     font-size: clamp(1rem, 5vw, 4rem);
     font-weight: 700;
@@ -198,6 +216,10 @@ nav{
     align-items: flex-start;
 }
 
+.leftHero img{
+    width: 4vw;
+}
+
 .leftHero ul li{
     list-style: none;
     text-align: left;
@@ -214,8 +236,7 @@ nav{
     /* gap: 50%; */
     align-items: center;
     /* padding-inline: 6rem; */
-    margin-top: 5rem;
-    margin-left: 6rem;
+    padding-left: 8%;
     width: 90%;
     /* background-color: red; */
 }
@@ -277,6 +298,7 @@ nav{
     justify-content: space-between;
     align-items: flex-start;
     background-color: greenyellow;
+    font-size: clamp(1rem, 5vw, 1rem);
     width: 100%;
 }
 .sectionThreeHead{
@@ -515,8 +537,11 @@ nav{
 
 .clusterMain2{
     position: relative;
-    top: -120px;
-    left: 120px;
+    top: -60%;
+    left: 80%;
+    transform: translate(-4%, 56%);
+    /* top: -120px;
+    left: 120px; */
 }
 
 .imgAvatatCont{
@@ -721,7 +746,6 @@ nav{
 
 .fontiFooter{
     width: 100%;
-    position: relative;
     z-index: 0;
     /* display: flex; */
     background-color: goldenrod;
@@ -737,11 +761,10 @@ nav{
 .topers{
     width: 180px;
     position: absolute;
-    z-index: 100;
-    bottom: 160px;
-    right: 160px;
-    /* top: -210px;
-    left: 400px; */
+    z-index: 1;
+    bottom: 40%;
+    right: 12.5%;
+    transform: translate(40%, 12.5%);
     /* background-color: red; */
 }
 .topers a{
@@ -751,11 +774,11 @@ nav{
     text-decoration: none;
     gap: 1rem;
     background-color: #D5FD8F;
-    padding: .8rem;
+    padding: .5rem;
     border-radius: 2rem;
-    width: 90%;
+    width: 50%;
     color: #042C2C;
-    font-size: 1rem;
+    font-size: clamp(.1rem, 1vw, 1rem);
     font-weight: 600;   
 }
 
@@ -766,6 +789,12 @@ nav{
 /* Mobile-friendly adjustments */
 
 @media (max-width: 768px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
     .background-image {
         width: 100%;
         height: 100%;
@@ -792,7 +821,6 @@ nav{
         z-index: 3; /* Positioned above the overlay */
         color: white; /* Ensure text is visible */
         font-weight: 600;
-        padding: 0 2rem 0 0;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -801,21 +829,37 @@ nav{
     }
     
     .header{
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: space-between;
-        width: 90%;
-        padding: 0rem 3rem 2.5rem 3rem;
+        width: 100vw;
         /* background-color: red; */
     }
+    
     .onboardArea, .onboardArea a, .onboardArea .login, .onboardArea .signUp, .SearchCartArea img, nav a{
         display: none;
-        color: #fff;
+        /* color: #fff; */
+        /* background-color: red; */
+    }
+    .logoArea {
+        display: flex;
+        /* flex-shrink: 0; */
+        /* flex-flow: column; */
+        align-items: center;
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+        margin-right: 0;
+
+        /* width: 100%; */
+        /* justify-content: space-between; */
+        /* padding: 2rem; */
         /* background-color: red; */
     }
 
-    .menu-icon{
+    .header .menu-icon button{ 
         display: flex;
+        justify-items: center;
+        align-items: center;
         padding: 1rem;
         border: none;
         border-radius: 5px;
@@ -853,26 +897,51 @@ nav{
 
 
     .topers a{
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
         gap: .5rem;
-        background-color: #D5FD8F;
         padding: .2rem;
         border-radius: 2rem;
-        width: 100%;
-        color: #042C2C;
-        font-size: 1vw;
+        width: 50%;
+        /* font-size: clamp(1rem, 5vw, 1rem); */
         font-weight: 300;   
-    } */
+    }
     
     .fancyNumContent{
         display: flex;
         flex-direction: column;
         /* background-color: red; */
     }
+    
+
+    .clusterMain2 {
+        position: relative;
+        /* transform: translate(6%, -800%); */
+        top: -140px;
+        left: 120px;
+    }
+
+    .sectionSixTextContent{
+        width: 100%;
+        font-size: 3vw;
+    }
+
+    .imgContent1,
+    .imgContent2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: .5rem; */
+}
+    .sectionThreeContent .imageCards{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.25rem;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        width: 100%;
+    }
+    
     .sectionSixContent .imgAvatatCont{
         flex-direction: column;
     }
