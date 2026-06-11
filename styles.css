@@ -159,14 +159,48 @@ a { text-decoration: none; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 2.25rem;
     z-index: 250;
+    /* Slide in from top */
+    transform: translateY(-100%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.38s ease;
+    opacity: 0;
 }
 
-.mobileNav.open { display: flex; }
+.mobileNav.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Close button inside mobile nav */
+.mobileNav-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: var(--ease);
+    font-family: inherit;
+}
+
+.mobileNav-close:hover {
+    background: rgba(255,255,255,0.18);
+    transform: rotate(90deg);
+}
 
 .mobileNav a {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     font-weight: 800;
     color: var(--white);
     letter-spacing: 0.03em;
@@ -177,7 +211,8 @@ a { text-decoration: none; }
 .mobileNav a::after {
     content: '';
     position: absolute;
-    bottom: -5px; left: 0;
+    bottom: -5px; left: 50%;
+    transform: translateX(-50%);
     width: 0; height: 3px;
     background: var(--lime);
     border-radius: 2px;
@@ -186,6 +221,16 @@ a { text-decoration: none; }
 
 .mobileNav a:hover { color: var(--lime); }
 .mobileNav a:hover::after { width: 100%; }
+
+/* Small lime accent below nav links */
+.mobileNav-tagline {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
 
 /* ============================================================
    HERO INTRO
@@ -514,47 +559,61 @@ a { text-decoration: none; }
     border-radius: 50px;
     padding: 7px 7px 7px 1.75rem;
     width: min(44rem, 88%);
-    position: relative; z-index: 1;
+    position: relative;
+    z-index: 1;
     backdrop-filter: blur(8px);
+    transition: border-color 0.25s;
+}
+
+.sub-Mail:focus-within {
+    border-color: rgba(213,253,143,0.6);
+    background: rgba(255,255,255,0.13);
 }
 
 .sub-Mail input {
     flex: 1;
     background: transparent;
-    border: none; outline: none;
+    border: none;
+    outline: none;
     font-size: 1rem;
     color: #fff;
     font-family: inherit;
     min-width: 0;
+    padding: 0.5rem 0;
 }
 
-.sub-Mail input::placeholder { color: rgba(255,255,255,0.5); }
+.sub-Mail input::placeholder { color: rgba(255,255,255,0.45); }
 
 .sub-Mail .join-btn {
     display: flex;
     background: var(--lime);
     border-radius: 50px;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     color: var(--green-deep);
     font-weight: 700;
-    gap: 0.6rem;
+    gap: 0.5rem;
     align-items: center;
+    justify-content: center;
     transition: var(--ease);
     flex-shrink: 0;
+    white-space: nowrap;
 }
 
-.sub-Mail .join-btn:hover { background: var(--lime-dark); transform: scale(1.04); }
+.sub-Mail .join-btn:hover {
+    background: var(--lime-dark);
+    box-shadow: 0 4px 16px rgba(213,253,143,0.4);
+}
 
 .sub-Mail .join-btn a {
     display: inline-flex;
-    gap: 0.6rem;
+    gap: 0.5rem;
     align-items: center;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--green-deep);
     font-weight: 700;
 }
 
-.sub-Mail .join-btn img { width: 16px; filter: brightness(0); }
+.sub-Mail .join-btn img { width: 15px; filter: brightness(0); }
 
 /* ============================================================
    SECTION SIX — TESTIMONIALS
@@ -753,19 +812,26 @@ a { text-decoration: none; }
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 50px;
     padding: 5px 5px 5px 1rem;
-    transition: border-color 0.2s;
+    transition: border-color 0.25s, background 0.25s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.partThreeMail:focus-within { border-color: var(--lime); }
+.partThreeMail:focus-within {
+    border-color: rgba(213,253,143,0.5);
+    background: rgba(255,255,255,0.09);
+}
 
 .partThreeMail input {
     background: transparent;
-    border: none; outline: none;
+    border: none;
+    outline: none;
     color: #fff;
     font-size: 0.82rem;
     font-family: inherit;
-    flex: 1; min-width: 0;
-    padding: 0.4rem 0;
+    flex: 1;
+    min-width: 0;
+    padding: 0.45rem 0;
 }
 
 .partThreeMail input::placeholder { color: rgba(255,255,255,0.3); }
@@ -774,14 +840,20 @@ a { text-decoration: none; }
     display: flex;
     background: var(--lime);
     border-radius: 50%;
-    width: 32px; height: 32px;
+    width: 32px;
+    height: 32px;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     transition: var(--ease);
 }
 
-.partThreeMail .join-btn:hover { background: var(--lime-dark); transform: scale(1.1); }
+.partThreeMail .join-btn:hover {
+    background: var(--lime-dark);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(213,253,143,0.35);
+}
+
 .partThreeMail .join-btn a { display: flex; align-items: center; justify-content: center; }
 .partThreeMail .join-btn img { width: 14px; filter: brightness(0); }
 
@@ -814,23 +886,30 @@ a { text-decoration: none; }
     width: 100%;
     position: relative;
     z-index: 0;
-    overflow: hidden;
     background: #f0ede4;
-    line-height: 1;
+    /* Height scales with the font so the section is always proportional */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    min-height: clamp(120px, 24vw, 400px);
 }
 
 .mogulaFont {
-    font-size: clamp(100px, 22vw, 380px);
+    /* Font scales with viewport — section height follows automatically */
+    font-size: clamp(80px, 22vw, 360px);
     font-family: 'mogula Regular', sans-serif;
     font-weight: 100;
     color: rgba(4,44,44,0.07);
-    padding: 1.5rem 3rem;
+    padding: 0 3rem;
     white-space: nowrap;
     user-select: none;
     letter-spacing: -0.02em;
+    line-height: 1;
+    pointer-events: none;
 }
 
-/* Back to top — sits ON TOP of the Mogula text, spanning full width */
+/* Back to top — centred over the entire fontiFooter div */
 .topers {
     position: absolute;
     inset: 0;
@@ -848,15 +927,17 @@ a { text-decoration: none; }
     justify-content: center;
     gap: 0.75rem;
     background: var(--lime);
-    padding: 1.1rem 2.5rem;
+    /* Button size scales proportionally with viewport */
+    padding: clamp(0.7rem, 1.5vw, 1.1rem) clamp(1.5rem, 3vw, 2.5rem);
     border-radius: 50px;
     color: var(--green-deep);
-    font-size: 1rem;
+    font-size: clamp(0.78rem, 1.2vw, 1rem);
     font-weight: 800;
     letter-spacing: 0.02em;
     transition: var(--ease);
     box-shadow: 0 8px 32px rgba(4,44,44,0.15), 0 2px 8px rgba(213,253,143,0.3);
     border: 2px solid rgba(4,44,44,0.08);
+    white-space: nowrap;
 }
 
 .topers a:hover {
@@ -865,7 +946,10 @@ a { text-decoration: none; }
     box-shadow: 0 16px 40px rgba(4,44,44,0.2), 0 4px 12px rgba(213,253,143,0.4);
 }
 
-.topers img { width: 18px; filter: brightness(0); }
+.topers img {
+    width: clamp(14px, 1.5vw, 20px);
+    filter: brightness(0);
+}
 
 /* ============================================================
    TABLET — 1024px
@@ -967,17 +1051,32 @@ a { text-decoration: none; }
     .sectionFiveContent { padding-block: 3rem; margin-top: 2.5rem; }
     .sectionFiveContent h1 { width: 92%; font-size: clamp(1rem, 4.5vw, 1.3rem); }
 
+    /* Newsletter form — stacked on mobile */
     .sub-Mail {
         flex-direction: column;
         border-radius: var(--radius);
-        padding: 0.75rem;
+        padding: 1rem;
         align-items: stretch;
-        gap: 0.75rem;
-        width: 90%;
+        gap: 0.85rem;
+        width: 92%;
+        border-radius: 16px;
     }
 
-    .sub-Mail input { padding: 0.5rem 0.25rem; font-size: 0.95rem; }
-    .sub-Mail .join-btn { border-radius: 10px; justify-content: center; }
+    .sub-Mail input {
+        padding: 0.6rem 0.5rem;
+        font-size: 1rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .sub-Mail .join-btn {
+        border-radius: 12px;
+        justify-content: center;
+        padding: 0.9rem 1rem;
+        width: 100%;
+    }
+
+    .sub-Mail .join-btn a { justify-content: center; font-size: 1rem; }
 
     /* Section Six */
     .sectionSixContent { margin-inline: 1.25rem; }
@@ -1011,9 +1110,12 @@ a { text-decoration: none; }
         gap: 0.4rem;
     }
 
-    /* Mogula + Back to top */
-    .mogulaFont { font-size: clamp(70px, 22vw, 140px); padding: 1rem 1.25rem; }
-    .topers a { padding: 0.9rem 1.75rem; font-size: 0.88rem; }
+    /* Mogula + Back to top — proportional on mobile */
+    .fontiFooter { min-height: clamp(80px, 22vw, 180px); }
+    .mogulaFont { font-size: clamp(52px, 20vw, 120px); padding: 0 1.25rem; }
+
+    /* partThreeMail on mobile */
+    .partThreeMail { width: 100%; }
 }
 
 /* ============================================================
@@ -1021,6 +1123,6 @@ a { text-decoration: none; }
    ============================================================ */
 @media (max-width: 480px) {
     .heroIntro h1 { font-size: clamp(1.35rem, 8.5vw, 1.9rem); }
-    .mogulaFont { font-size: clamp(56px, 20vw, 100px); }
-    .topers a { padding: 0.8rem 1.5rem; font-size: 0.82rem; }
+    .fontiFooter { min-height: clamp(70px, 20vw, 140px); }
+    .mogulaFont { font-size: clamp(44px, 18vw, 90px); padding: 0 1rem; }
 }
