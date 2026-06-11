@@ -881,49 +881,45 @@ a { text-decoration: none; }
 .sectionSevenContentExtra a:hover { color: var(--lime); }
 
 /* ============================================================
-   BACK TO TOP BAR
+   FLOATING BACK TO TOP BUTTON
    ============================================================ */
-.backToTopBar {
-    background: var(--green-deep);
+.backToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--lime);
+    border: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 2rem;
-    width: 100%;
-}
-
-.backToTopBar a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    background: var(--lime);
-    padding: 0.85rem 2.5rem;
-    border-radius: 50px;
-    color: var(--green-deep);
-    font-size: 0.95rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
+    box-shadow: 0 6px 24px rgba(4,44,44,0.2), 0 2px 8px rgba(213,253,143,0.3);
     transition: var(--ease);
-    box-shadow: 0 4px 20px rgba(213,253,143,0.25);
-    text-decoration: none;
+    /* Hidden by default — JS shows it after scrolling */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
 }
 
-.backToTopBar a:hover {
+.backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.backToTop:hover {
     background: var(--lime-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(213,253,143,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(4,44,44,0.25), 0 4px 12px rgba(213,253,143,0.4);
 }
 
-.backToTopBar img {
-    width: 16px;
+.backToTop img {
+    width: 20px;
     filter: brightness(0);
-}
-
-.backToTopBar p {
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: var(--green-deep);
 }
 
 /* ============================================================

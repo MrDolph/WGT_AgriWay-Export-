@@ -25,14 +25,26 @@ function closeMenu() {
     document.body.style.overflow = '';
 }
 
-// Smooth back to top
+// Floating back to top — show after 300px scroll
 var backToTop = document.getElementById('backToTop');
+
+function toggleBackToTop() {
+    if (!backToTop) return;
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+}
+
 if (backToTop) {
-    backToTop.addEventListener('click', function (e) {
-        e.preventDefault();
+    backToTop.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+window.addEventListener('scroll', toggleBackToTop, { passive: true });
+toggleBackToTop();
 
 // Scroll reveal
 var revealEls = document.querySelectorAll(
