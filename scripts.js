@@ -73,3 +73,36 @@ function checkReveal() {
 
 window.addEventListener('scroll', checkReveal, { passive: true });
 setTimeout(checkReveal, 120);
+
+// ---- Stats counter animation ----
+function animateCounter(el, target, duration) {
+    var start = 0;
+    var startTime = null;
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+}
+
+var statsTriggered = false;
+var statsBar = document.querySelector('.heroStats');
+
+function checkStats() {
+    if (statsTriggered || !statsBar) return;
+    var rect = statsBar.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+        statsTriggered = true;
+        document.querySelectorAll('.heroStatNum').forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            if (!isNaN(target)) animateCounter(el, target, 1800);
+        });
+    }
+}
+
+window.addEventListener('scroll', checkStats, { passive: true });
+setTimeout(checkStats, 600);

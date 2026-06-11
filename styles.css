@@ -233,7 +233,54 @@ a { text-decoration: none; }
 }
 
 /* ============================================================
-   HERO INTRO
+   HERO BODY WRAPPER
+   ============================================================ */
+.heroBody {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+/* Floating tag */
+.heroTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(213,253,143,0.12);
+    border: 1px solid rgba(213,253,143,0.35);
+    color: var(--lime);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 50px;
+    margin: 0 0 0 6rem;
+    width: fit-content;
+    animation: fadeSlideDown 0.6s ease both;
+}
+
+.heroTagDot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--lime);
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:0.4; transform:scale(0.75); }
+}
+
+@keyframes fadeSlideDown {
+    from { opacity:0; transform:translateY(-12px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+
+/* ============================================================
+   HERO INTRO — your original h1 preserved
    ============================================================ */
 .heroIntro {
     position: relative;
@@ -241,6 +288,7 @@ a { text-decoration: none; }
     display: flex;
     justify-content: left;
     align-items: center;
+    animation: fadeSlideUp 0.7s 0.15s ease both;
 }
 
 .heroIntro img {
@@ -248,13 +296,13 @@ a { text-decoration: none; }
     position: absolute;
     top: 40%; left: 2%;
     z-index: 1;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .heroIntro h1 {
     position: relative; z-index: 2;
     color: var(--text);
-    padding: 5rem 8rem 5rem 6rem;
+    padding: 4rem 8rem 4rem 6rem;
     width: 88%;
     font-size: clamp(2rem, 3.5vw, 3.5rem);
     line-height: 1.18;
@@ -269,8 +317,9 @@ a { text-decoration: none; }
     border-radius: 4px;
 }
 
+/* Your original Farmers gradient — untouched */
 .design {
-    background: linear-gradient(90deg, #2dbe6c, #f4c430, #ff6b35);
+    background: linear-gradient(45deg, #ff6b6b, #f4c430, #1e90ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -283,10 +332,11 @@ a { text-decoration: none; }
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 3.5rem 6rem;
+    padding: 2rem 6rem;
     color: #fff;
     width: 100%;
     gap: 2rem;
+    animation: fadeSlideUp 0.7s 0.25s ease both;
 }
 
 .leftHero { display: flex; align-items: center; gap: 1.5rem; }
@@ -315,8 +365,9 @@ a { text-decoration: none; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 6rem 4rem;
+    padding: 1.5rem 6rem 2.5rem;
     width: 100%;
+    animation: fadeSlideUp 0.7s 0.35s ease both;
 }
 
 .checkSol a, .exploreMore a {
@@ -330,7 +381,7 @@ a { text-decoration: none; }
 
 .checkSol a {
     background: var(--lime);
-    padding: 0.8rem 1.5rem;
+    padding: 0.85rem 1.75rem;
     border-radius: 50px;
     color: var(--green-deep);
     box-shadow: 0 4px 16px rgba(213,253,143,0.35);
@@ -339,11 +390,117 @@ a { text-decoration: none; }
 .checkSol a:hover {
     background: var(--lime-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(213,253,143,0.45);
+    box-shadow: 0 8px 24px rgba(213,253,143,0.5);
 }
 
 .exploreMore a { color: rgba(255,255,255,0.9); }
 .exploreMore a:hover { color: var(--lime); }
+
+/* ============================================================
+   HERO STATS BAR
+   ============================================================ */
+.heroStats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0 6rem 0;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 1.5rem 2.5rem;
+    animation: fadeSlideUp 0.7s 0.45s ease both;
+}
+
+.heroStat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    gap: 4px;
+}
+
+.heroStatNum {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--lime);
+    line-height: 1;
+}
+
+.heroStatPrefix,
+.heroStatSuffix {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--lime);
+    line-height: 1;
+}
+
+.heroStatLabel {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 2px;
+}
+
+/* Inline num + suffix */
+.heroStat > span:not(.heroStatLabel) { display: inline; }
+.heroStat { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0 2px; }
+.heroStatLabel { width: 100%; margin-top: 4px; }
+
+.heroStatDivider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    margin: 0 2rem;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* ============================================================
+   SCROLL INDICATOR
+   ============================================================ */
+.heroScroll {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    animation: fadeSlideUp 0.7s 0.55s ease both;
+}
+
+.heroScrollLine {
+    width: 1px;
+    height: 52px;
+    background: linear-gradient(to bottom, transparent, var(--lime));
+    animation: scrollPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    51%  { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+.heroScroll span {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    writing-mode: vertical-rl;
+}
+
+@keyframes fadeSlideUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+}
 
 /* ============================================================
    SECTION TWO — ABOUT
@@ -969,9 +1126,12 @@ a { text-decoration: none; }
     .hamburger { display: flex; }
 
     /* Hero */
+    .heroTag { margin: 0.5rem 1.25rem; font-size: 0.68rem; }
+    .heroScroll { display: none; }
+
     .heroIntro img { display: none; }
     .heroIntro h1 {
-        padding: 2.5rem 1.25rem 1.5rem;
+        padding: 2rem 1.25rem 1.25rem;
         font-size: clamp(1.55rem, 7vw, 2.4rem);
         width: 100%;
     }
@@ -979,7 +1139,7 @@ a { text-decoration: none; }
     .heroSliderWords {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1.5rem 1.25rem;
+        padding: 1.25rem 1.25rem;
         gap: 1.25rem;
     }
 
@@ -988,11 +1148,29 @@ a { text-decoration: none; }
     .callToAction {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1.25rem 1.25rem 2.5rem;
+        padding: 1.25rem 1.25rem 2rem;
         gap: 1rem;
     }
 
     .exploreMore a { padding-right: 0; }
+
+    /* Stats bar — 2x2 grid on mobile */
+    .heroStats {
+        margin: 0 1.25rem;
+        flex-wrap: wrap;
+        padding: 1.25rem;
+        gap: 0;
+        border-radius: 14px;
+    }
+
+    .heroStat {
+        flex: 1 1 45%;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .heroStatNum { font-size: 1.5rem; }
+    .heroStatPrefix, .heroStatSuffix { font-size: 1.2rem; }
+    .heroStatDivider { display: none; }
 
     /* Section Two */
     .sectionTwoContent {
