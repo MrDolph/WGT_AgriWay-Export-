@@ -725,29 +725,30 @@ a { text-decoration: none; }
 
 /* ============================================================
    SECTION SEVEN — FOOTER
+   Uses grid so columns have predictable widths
    ============================================================ */
 .sectionSevenContent {
     background: var(--dark);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.6fr;
     align-items: flex-start;
-    justify-content: space-between;
     margin-top: 4rem;
     padding: 5rem 6rem;
     width: 100%;
     color: #A5A49A;
     font-size: 14px;
-    gap: 4rem;
+    gap: 3.5rem;
 }
 
 .partOne { display: flex; flex-direction: column; gap: 1rem; }
-.partOne img { width: 65%; }
+.partOne > img { width: 65%; }
 
 .partOne p {
-    max-width: 260px;
     line-height: 1.8;
     font-size: 13px;
     font-weight: 500;
     color: rgba(255,255,255,0.5);
+    max-width: 100%;
 }
 
 .iconsSocial { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.25rem; }
@@ -771,11 +772,11 @@ a { text-decoration: none; }
 .partTwo, .partThree { display: flex; flex-direction: column; }
 
 .partTwo h2, .partThree > h2 {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     color: rgba(255,255,255,0.9);
     padding-bottom: 0.5rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
@@ -792,7 +793,7 @@ a { text-decoration: none; }
 
 .partTwo .list h2 { font-size: 13px; font-weight: 500; color: #A5A49A; transition: color 0.2s; }
 .partTwo .list:hover h2 { color: var(--lime); }
-.partTwo .list img { width: 14px; opacity: 0.6; }
+.partTwo .list img { width: 14px; opacity: 0.6; flex-shrink: 0; }
 
 .partThree .list {
     display: flex;
@@ -804,6 +805,7 @@ a { text-decoration: none; }
 .partThree .list h2 { font-size: 13px; font-weight: 500; color: #A5A49A; }
 .partThree .list img { padding: 0.2rem; margin-top: 1px; flex-shrink: 0; opacity: 0.7; }
 
+/* Email form — now has a full column width to breathe */
 .partThreeMail {
     display: flex;
     align-items: center;
@@ -811,14 +813,14 @@ a { text-decoration: none; }
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 50px;
-    padding: 5px 5px 5px 1rem;
-    transition: border-color 0.25s, background 0.25s;
+    padding: 6px 6px 6px 1rem;
     width: 100%;
     box-sizing: border-box;
+    transition: border-color 0.25s, background 0.25s;
 }
 
 .partThreeMail:focus-within {
-    border-color: rgba(213,253,143,0.5);
+    border-color: rgba(213,253,143,0.55);
     background: rgba(255,255,255,0.09);
 }
 
@@ -831,17 +833,17 @@ a { text-decoration: none; }
     font-family: inherit;
     flex: 1;
     min-width: 0;
-    padding: 0.45rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
-.partThreeMail input::placeholder { color: rgba(255,255,255,0.3); }
+.partThreeMail input::placeholder { color: rgba(255,255,255,0.35); }
 
 .partThreeMail .join-btn {
     display: flex;
     background: var(--lime);
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -851,7 +853,7 @@ a { text-decoration: none; }
 .partThreeMail .join-btn:hover {
     background: var(--lime-dark);
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(213,253,143,0.35);
+    box-shadow: 0 4px 12px rgba(213,253,143,0.3);
 }
 
 .partThreeMail .join-btn a { display: flex; align-items: center; justify-content: center; }
@@ -879,76 +881,49 @@ a { text-decoration: none; }
 .sectionSevenContentExtra a:hover { color: var(--lime); }
 
 /* ============================================================
-   MOGULA FOOTER + BACK TO TOP
-   The .topers is INSIDE .fontiFooter, overlapping A and Y
+   BACK TO TOP BAR
    ============================================================ */
-.fontiFooter {
-    width: 100%;
-    position: relative;
-    z-index: 0;
-    background: #f0ede4;
-    /* Height scales with the font so the section is always proportional */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    overflow: hidden;
-    min-height: clamp(120px, 24vw, 400px);
-}
-
-.mogulaFont {
-    /* Font scales with viewport — section height follows automatically */
-    font-size: clamp(80px, 22vw, 360px);
-    font-family: 'mogula Regular', sans-serif;
-    font-weight: 100;
-    color: rgba(4,44,44,0.07);
-    padding: 0 3rem;
-    white-space: nowrap;
-    user-select: none;
-    letter-spacing: -0.02em;
-    line-height: 1;
-    pointer-events: none;
-}
-
-/* Back to top — centred over the entire fontiFooter div */
-.topers {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
+.backToTopBar {
+    background: var(--green-deep);
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
+    padding: 1.5rem 2rem;
+    width: 100%;
 }
 
-.topers a {
-    pointer-events: auto;
+.backToTopBar a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     background: var(--lime);
-    /* Button size scales proportionally with viewport */
-    padding: clamp(0.7rem, 1.5vw, 1.1rem) clamp(1.5rem, 3vw, 2.5rem);
+    padding: 0.85rem 2.5rem;
     border-radius: 50px;
     color: var(--green-deep);
-    font-size: clamp(0.78rem, 1.2vw, 1rem);
+    font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 0.02em;
     transition: var(--ease);
-    box-shadow: 0 8px 32px rgba(4,44,44,0.15), 0 2px 8px rgba(213,253,143,0.3);
-    border: 2px solid rgba(4,44,44,0.08);
-    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(213,253,143,0.25);
+    text-decoration: none;
 }
 
-.topers a:hover {
+.backToTopBar a:hover {
     background: var(--lime-dark);
     transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(4,44,44,0.2), 0 4px 12px rgba(213,253,143,0.4);
+    box-shadow: 0 8px 28px rgba(213,253,143,0.35);
 }
 
-.topers img {
-    width: clamp(14px, 1.5vw, 20px);
+.backToTopBar img {
+    width: 16px;
     filter: brightness(0);
+}
+
+.backToTopBar p {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--green-deep);
 }
 
 /* ============================================================
@@ -966,7 +941,15 @@ a { text-decoration: none; }
     .sectionFourHeader img { padding-left: 8rem; }
     .fancyNumContent2 { padding: 3rem 0 0 8rem; }
     .sectionSixContent { margin-inline: 3rem; }
-    .sectionSevenContent { padding: 4rem 3rem; gap: 2.5rem; }
+    /* Footer: two columns on tablet */
+    .sectionSevenContent {
+        grid-template-columns: 1fr 1fr;
+        padding: 4rem 3rem;
+        gap: 2.5rem;
+    }
+    /* partOne spans both columns on tablet */
+    .partOne { grid-column: 1 / -1; flex-direction: row; align-items: flex-start; gap: 2rem; }
+    .partOne > img { width: 120px; flex-shrink: 0; }
     .sectionSevenContentExtra { padding: 1.25rem 3rem; }
 }
 
@@ -1094,15 +1077,32 @@ a { text-decoration: none; }
     .testi-num { font-size: 0.95rem; }
     .sectionSixTextContent { font-size: 0.85rem; }
 
-    /* Footer */
+    /* Footer — single column on mobile */
     .sectionSevenContent {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         padding: 2.5rem 1.25rem;
         gap: 2rem;
     }
 
-    .partOne img { width: 55%; }
+    .partOne { grid-column: auto; flex-direction: column; }
+    .partOne > img { width: 55%; }
     .partOne p { max-width: 100%; }
+
+    /* Email form on mobile — full width, easy to type into */
+    .partThreeMail {
+        border-radius: 12px;
+        padding: 10px 10px 10px 1rem;
+    }
+
+    .partThreeMail input {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.25rem 0.35rem 0;
+    }
+
+    .partThreeMail .join-btn {
+        width: 38px;
+        height: 38px;
+    }
 
     .sectionSevenContentExtra {
         padding: 1rem 1.25rem;
@@ -1110,12 +1110,6 @@ a { text-decoration: none; }
         gap: 0.4rem;
     }
 
-    /* Mogula + Back to top — proportional on mobile */
-    .fontiFooter { min-height: clamp(80px, 22vw, 180px); }
-    .mogulaFont { font-size: clamp(52px, 20vw, 120px); padding: 0 1.25rem; }
-
-    /* partThreeMail on mobile */
-    .partThreeMail { width: 100%; }
 }
 
 /* ============================================================
@@ -1123,6 +1117,4 @@ a { text-decoration: none; }
    ============================================================ */
 @media (max-width: 480px) {
     .heroIntro h1 { font-size: clamp(1.35rem, 8.5vw, 1.9rem); }
-    .fontiFooter { min-height: clamp(70px, 20vw, 140px); }
-    .mogulaFont { font-size: clamp(44px, 18vw, 90px); padding: 0 1rem; }
 }
