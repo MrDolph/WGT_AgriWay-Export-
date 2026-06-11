@@ -25,7 +25,7 @@ function closeMenu() {
     document.body.style.overflow = '';
 }
 
-// Floating back to top — show after 300px scroll
+// Back to top — hidden at top, visible after 300px scroll
 var backToTop = document.getElementById('backToTop');
 
 function toggleBackToTop() {
