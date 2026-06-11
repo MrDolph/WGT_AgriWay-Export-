@@ -3,445 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AgriWay Export — Simplifying agricultural exports by connecting farmers with international buyers worldwide.">
-    <title>AgriWay Export</title>
+    <meta name="description" content="AgriWay Export — Connecting farmers with international buyers worldwide.">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>AgriWay Export</title>
 </head>
 <body>
 
-<!-- ===================== NAVBAR ===================== -->
-<header class="navbar" id="navbar">
-    <div class="nav-inner">
-        <a href="#" class="nav-logo">
-            <img src="assets/Logo.svg" alt="AgriWay Logo">
-            <img src="assets/brandName.svg" alt="AgriWay" class="nav-brand-name">
-        </a>
+    <!-- ===== HERO CONTAINER ===== -->
+    <div class="headContainer">
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#hero" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#solutions" class="nav-link">Solutions</a>
-            <a href="#services" class="nav-link">Services</a>
-        </nav>
-
-        <div class="nav-actions">
-            <div class="nav-icons">
-                <button class="nav-icon-btn" aria-label="Search">
-                    <img src="assets/Search.svg" alt="">
-                </button>
-                <button class="nav-icon-btn" aria-label="Cart">
-                    <img src="assets/cartWithZero.svg" alt="">
-                </button>
+        <!-- NAV -->
+        <div class="header" id="header">
+            <div class="logoArea">
+                <div class="logo"><img src="assets/Logo.svg" alt="Agriway-logo"></div>
+                <div class="brandName"><img src="assets/brandName.svg" alt="Brand-Name"></div>
             </div>
-            <a href="#" class="btn-login">Login</a>
-            <a href="#" class="btn-signup">Sign Up</a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+
+            <nav id="desktopNav">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#">Products</a>
+            </nav>
+
+            <div class="onboardArea">
+                <div class="login"><a href="#">Login</a></div>
+                <div class="signUp"><a href="#">Sign Up</a></div>
+            </div>
+
+            <div class="SearchCartArea">
+                <div class="SearchIcon"><img src="assets/Search.svg" alt="Search"></div>
+                <div class="cart"><img src="assets/cartWithZero.svg" alt="Cart"></div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
+
+        <!-- Mobile nav -->
+        <div class="mobileNav" id="mobileNav" aria-hidden="true">
+            <a href="#" onclick="closeMenu()">Home</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#" onclick="closeMenu()">Products</a>
+        </div>
+
+        <!-- HERO INTRO -->
+        <div class="heroIntro">
+            <h1>
+                Simplifying agricultural exports by connecting sellers
+                <span class="dashLine"><hr></span>
+                <span class="design">Farmers</span> with international buyers.
+            </h1>
+            <img src="assets/RectangleWithLight.svg" alt="RectangleWithLight">
+        </div>
+
+        <!-- HERO LOWER -->
+        <div class="heroSliderWords">
+            <div class="leftHero">
+                <div><img src="assets/OrganicFood.svg" alt="Organic Food"></div>
+                <div>
+                    <ul>
+                        <li>Simplified Export</li>
+                        <li>Informed Decision Making</li>
+                        <li>Secure Transactions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightHero">
+                <p>This integrated solution enhances transaction efficiency, transparency, and accessibility for agricultural producers in global markets.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="callToAction">
+            <div class="checkSol">
+                <a href="#"><p>Our Solutions</p><img src="assets/arrowRight.svg" alt="arrowRight"></a>
+            </div>
+            <div class="exploreMore">
+                <a href="#"><p>Explore More</p><img src="assets/arrowDown.svg" alt="arrowDown"></a>
+            </div>
+        </div>
+
     </div>
-</header>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="hero">
-    <div class="hero-bg">
-        <div class="hero-overlay"></div>
-    </div>
-
-    <!-- Floating tag -->
-    <div class="hero-tag reveal-up" style="animation-delay:0.1s">
-        <span class="hero-tag-dot"></span>
-        AI-Powered Agricultural Exports
-    </div>
-
-    <div class="hero-content">
-        <h1 class="hero-heading reveal-up" style="animation-delay:0.25s">
-            Simplifying exports by connecting
-            <span class="hero-dash">—</span>
-            <span class="hero-highlight">Farmers</span>
-            with international buyers.
-        </h1>
-
-        <p class="hero-sub reveal-up" style="animation-delay:0.4s">
+    <!-- ===== SECTION TWO — ABOUT ===== -->
+    <div class="sectionTwoContent" id="about">
+        <p>
+            <span>Explore Agriway's Export Solution,</span><br>
             This integrated solution enhances transaction efficiency, transparency, and accessibility for agricultural producers in global markets.
         </p>
+        <img src="assets/WedgedSquares.svg" alt="WedgedSquares">
+    </div>
 
-        <div class="hero-pills reveal-up" style="animation-delay:0.5s">
-            <span class="hero-pill">✓ Simplified Export</span>
-            <span class="hero-pill">✓ Informed Decisions</span>
-            <span class="hero-pill">✓ Secure Transactions</span>
+    <!-- ===== SECTION THREE — SOLUTIONS ===== -->
+    <div class="sectionThreeContent">
+        <p>Our Sustainable Solutions</p>
+        <img src="assets/Rectangle 6.svg" alt="Rectangle">
+        <div class="imageCards">
+            <div class="image">
+                <img src="assets/Rectangle-3.svg" alt="Simplified Export">
+                <p>Simplified Export Process</p>
+            </div>
+            <div class="image">
+                <img src="assets/Rectangle-5.svg" alt="AI Decision Making">
+                <p>AI Informed Decision Making</p>
+            </div>
+            <div class="image">
+                <img src="assets/Rectangle 4.svg" alt="Secure Transactions">
+                <p>Secure Transactions</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION FOUR — SERVICES ===== -->
+    <div class="sectionFourContent" id="services">
+        <div class="sectionFourHeader">
+            <p>What we want to do</p>
+            <img src="assets/Rectangle 6.svg" alt="Rectangle">
         </div>
 
-        <div class="hero-cta reveal-up" style="animation-delay:0.6s">
-            <a href="#solutions" class="btn-primary">
-                Our Solutions
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="fancyNumContent1">
+            <div class="numIconWrap">
+                <img src="assets/WedgedSquares.svg" alt="">
+                <p class="num">01</p>
+            </div>
+            <div class="numContent">
+                <h1>Market Expansion</h1>
+                <p>Increase the reach of agricultural producers by connecting them with international buyers.</p>
+            </div>
+        </div>
+
+        <div class="fancyNumContent2">
+            <div class="numIconWrap">
+                <img src="assets/WedgedSquares.svg" alt="">
+                <p class="num">02</p>
+            </div>
+            <div class="numContent">
+                <h1>Operational Efficiency</h1>
+                <p>Streamline export processes through automation, reducing time and costs.</p>
+            </div>
+        </div>
+
+        <div class="fancyNumContent3">
+            <div class="numIconWrap">
+                <img src="assets/WedgedSquares.svg" alt="">
+                <p class="num">03</p>
+            </div>
+            <div class="numContent">
+                <h1>User Growth</h1>
+                <p>Attract and retain users by providing valuable tools and support for successful exporting.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION FIVE — NEWSLETTER ===== -->
+    <div class="sectionFiveContent">
+        <h1>Get the Latest AgriWay Updates By Subscribing To Our Newsletter</h1>
+        <div class="sub-Mail">
+            <input type="email" placeholder="Enter email address">
+            <div class="join-btn">
+                <a href="#"><p>Join Now</p><img src="assets/arrowRight.svg" alt="arrowRight"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION SIX — TESTIMONIALS ===== -->
+    <div class="sectionSixContent">
+        <div class="sectionSix">
+            <div class="sectionSixHeader">
+                <h1>Testimonial</h1>
+                <img src="assets/Rectangle 6.svg" alt="Rectangle">
+            </div>
+            <div class="imgContent3">
+                <img src="assets/OrganicFood.svg" alt="OrganicFood">
+            </div>
+        </div>
+        <div class="sectionSixSubHead">
+            <h1>What They Say</h1>
+        </div>
+        <div class="imgAvatatCont">
+
+            <!-- Testimonial 1 -->
+            <div class="imgContent1">
+                <div class="imgCluster">
+                    <div class="clusterMain1">
+                        <img src="assets/avatar-04.webp.svg" alt="Bonnie Tolbet">
+                    </div>
+                    <div class="clusterMain2">
+                        <img src="assets/span.icon.svg" alt="1">
+                        <span class="testi-num">1</span>
+                    </div>
+                </div>
+                <div class="sectionSixTextContent">
+                    <p>"AgriWay completely transformed how I source agricultural produce. The platform is transparent, fast, and secure — I've connected with over 12 Nigerian farmers directly."</p>
+                    <div class="avatarId">
+                        <h2>Bonnie Tolbet</h2>
+                        <p>International Buyer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="imgContent2">
+                <div class="imgCluster">
+                    <div class="clusterMain1">
+                        <img src="assets/avatar-05.webp.svg" alt="Sarah Albert">
+                    </div>
+                    <div class="clusterMain2">
+                        <img src="assets/span.icon.svg" alt="2">
+                        <span class="testi-num">2</span>
+                    </div>
+                </div>
+                <div class="sectionSixTextContent">
+                    <p>"The AI-driven pricing insights saved me from a bad deal. Now I know exactly when and where to sell. AgriWay is the future of agricultural trade in Africa."</p>
+                    <div class="avatarId">
+                        <h2>Sarah Albert</h2>
+                        <p>Farmer & Seller</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== SECTION SEVEN — FOOTER ===== -->
+    <div class="sectionSevenContent">
+        <div class="partOne">
+            <img src="assets/Frame-6 transparent.svg" alt="AgriWay">
+            <p class="mainContentSectseven">Connecting local farmers with global markets through technology, transparency, and trust.</p>
+            <div class="iconsSocial">
+                <div class="icon"><img src="assets/Vector (2).svg" alt="Twitter"></div>
+                <div class="icon"><img src="assets/Vector (3).svg" alt="Facebook"></div>
+                <div class="icon"><img src="assets/Vector (4).svg" alt="Instagram"></div>
+                <div class="icon"><img src="assets/Vector-5.svg" alt="LinkedIn"></div>
+            </div>
+        </div>
+        <div class="partTwo">
+            <h2>Explore</h2>
+            <img src="assets/span.elementor-divider-separator1.svg" alt="separator">
+            <div class="fancyList">
+                <div class="list"><img src="assets/leaf.svg" alt=""><h2>About</h2></div>
+                <div class="list"><img src="assets/leaf.svg" alt=""><h2>Services</h2></div>
+                <div class="list"><img src="assets/leaf.svg" alt=""><h2>Products</h2></div>
+            </div>
+        </div>
+        <div class="partThree">
+            <h2>Contact</h2>
+            <img src="assets/span.elementor-divider-separator1.svg" alt="separator">
+            <div class="fancyList">
+                <div class="list"><img src="assets/phone-icon.svg" alt=""><h2>+234 813 787 2189</h2></div>
+                <div class="list"><img src="assets/messageEnvelope.svg" alt=""><h2>hello@agriway.ng</h2></div>
+                <div class="list"><img src="assets/location.svg" alt=""><h2>Lagos, Nigeria</h2></div>
+            </div>
+            <div class="partThreeMail">
+                <input type="email" placeholder="Enter email address">
+                <div class="join-btn">
+                    <a href="#"><img src="assets/arrowRight.svg" alt="Subscribe"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright bar -->
+    <div class="sectionSevenContentExtra">
+        <div class="leftExtra">
+            <p>&copy; All Copyright 2024 by <span>AgriWay Export</span></p>
+        </div>
+        <div class="rightExtra">
+            <p>Terms of Use <span>|</span> Privacy Policy</p>
+        </div>
+    </div>
+
+    <!-- Mogula watermark + back to top -->
+    <div class="fontiFooter">
+        <h1 class="mogulaFont">Agriway</h1>
+        <div class="topers">
+            <a href="#header" id="backToTop">
+                <p>Back to top</p>
+                <img src="assets/arrowUp.svg" alt="arrowUp">
             </a>
-            <a href="#about" class="btn-ghost">
-                Explore More
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-            </a>
         </div>
     </div>
 
-    <!-- Stats bar -->
-    <div class="hero-stats reveal-up" style="animation-delay:0.75s">
-        <div class="hero-stat">
-            <span class="hero-stat-num">2,400+</span>
-            <span class="hero-stat-label">Farmers Connected</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-            <span class="hero-stat-num">48</span>
-            <span class="hero-stat-label">Countries Reached</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-            <span class="hero-stat-num">$12M+</span>
-            <span class="hero-stat-label">Transactions Secured</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-            <span class="hero-stat-num">99.8%</span>
-            <span class="hero-stat-label">Uptime</span>
-        </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="hero-scroll">
-        <div class="hero-scroll-line"></div>
-        <span>Scroll</span>
-    </div>
-</section>
-
-<!-- ===================== ABOUT ===================== -->
-<section class="about" id="about">
-    <div class="about-inner">
-        <div class="about-text">
-            <div class="section-tag reveal-up">About AgriWay</div>
-            <h2 class="section-heading reveal-up">
-                Explore AgriWay's<br>
-                <em>Export Solution</em>
-            </h2>
-            <p class="about-body reveal-up">
-                This integrated solution enhances transaction efficiency, transparency, and accessibility for agricultural producers in global markets. We bridge the gap between local sellers — Farmers — and international buyers, creating a seamless, secure ecosystem for agricultural trade.
-            </p>
-            <ul class="about-list reveal-up">
-                <li>
-                    <div class="about-list-icon">🌍</div>
-                    <div>
-                        <strong>Global Market Access</strong>
-                        <p>Connect directly with verified international buyers across 48 countries.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="about-list-icon">🤖</div>
-                    <div>
-                        <strong>AI-Driven Insights</strong>
-                        <p>Make smarter export decisions with real-time market intelligence.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="about-list-icon">🔒</div>
-                    <div>
-                        <strong>Secure Payments</strong>
-                        <p>Every transaction is protected with enterprise-grade security.</p>
-                    </div>
-                </li>
-            </ul>
-            <a href="#solutions" class="btn-primary reveal-up">
-                See Our Solutions
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-
-        <div class="about-visual reveal-right">
-            <div class="about-img-wrap">
-                <img src="assets/bg2.jpeg" alt="Farmer in field" class="about-img">
-                <div class="about-badge">
-                    <span class="about-badge-num">2,400+</span>
-                    <span class="about-badge-label">Farmers Empowered</span>
-                </div>
-                <div class="about-img-accent"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== SOLUTIONS (Section 3) ===================== -->
-<section class="solutions" id="solutions">
-    <div class="solutions-inner">
-        <div class="section-tag reveal-up">What We Offer</div>
-        <h2 class="section-heading reveal-up">Our Sustainable Solutions</h2>
-        <p class="section-sub reveal-up">Three powerful pillars driving agricultural transformation across global markets.</p>
-
-        <div class="solutions-grid">
-
-            <div class="sol-card reveal-up" style="animation-delay:0.1s">
-                <div class="sol-card-img">
-                    <img src="assets/Rectangle-3.svg" alt="Simplified Export Process">
-                    <div class="sol-card-overlay">
-                        <div class="sol-card-icon">🌐</div>
-                    </div>
-                </div>
-                <div class="sol-card-body">
-                    <span class="sol-card-num">01</span>
-                    <h3>Simplified Export Process</h3>
-                    <p>Streamlined export workflows that cut through bureaucracy, reduce paperwork, and get your produce to global markets faster than ever.</p>
-                    <a href="#" class="sol-card-link">
-                        Learn more
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="sol-card reveal-up" style="animation-delay:0.2s">
-                <div class="sol-card-img">
-                    <img src="assets/Rectangle-5.svg" alt="AI Decision Making">
-                    <div class="sol-card-overlay">
-                        <div class="sol-card-icon">📊</div>
-                    </div>
-                </div>
-                <div class="sol-card-body">
-                    <span class="sol-card-num">02</span>
-                    <h3>AI-Informed Decision Making</h3>
-                    <p>Real-time market insights, price trend analytics, and buyer preference data — all powered by AI to help you export smarter.</p>
-                    <a href="#" class="sol-card-link">
-                        Learn more
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="sol-card reveal-up" style="animation-delay:0.3s">
-                <div class="sol-card-img">
-                    <img src="assets/Rectangle 4.png" alt="Secure Transactions">
-                    <div class="sol-card-overlay">
-                        <div class="sol-card-icon">🔒</div>
-                    </div>
-                </div>
-                <div class="sol-card-body">
-                    <span class="sol-card-num">03</span>
-                    <h3>Secure Transactions</h3>
-                    <p>Enterprise-grade payment security with escrow protection, real-time fraud detection, and multi-currency support.</p>
-                    <a href="#" class="sol-card-link">
-                        Learn more
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- ===================== SERVICES (Section 4) ===================== -->
-<section class="services" id="services">
-    <div class="services-inner">
-        <div class="services-left">
-            <div class="section-tag reveal-up">What We Do</div>
-            <h2 class="section-heading reveal-up">What we want<br>to <em>achieve</em></h2>
-            <p class="section-sub reveal-up">Three core goals driving our mission to transform agricultural exports across Africa and beyond.</p>
-        </div>
-        <div class="services-right">
-            <div class="service-item reveal-up" style="animation-delay:0.1s">
-                <div class="service-num-wrap">
-                    <span class="service-num">01</span>
-                    <div class="service-line"></div>
-                </div>
-                <div class="service-content">
-                    <div class="service-icon">🌍</div>
-                    <div>
-                        <h3>Market Expansion</h3>
-                        <p>Increase the reach of agricultural producers by connecting them with verified international buyers across 48 countries.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item reveal-up" style="animation-delay:0.2s">
-                <div class="service-num-wrap">
-                    <span class="service-num">02</span>
-                    <div class="service-line"></div>
-                </div>
-                <div class="service-content">
-                    <div class="service-icon">⚡</div>
-                    <div>
-                        <h3>Operational Efficiency</h3>
-                        <p>Streamline export processes through automation, reducing time and costs so farmers spend less on logistics and more on growing.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item reveal-up" style="animation-delay:0.3s">
-                <div class="service-num-wrap">
-                    <span class="service-num">03</span>
-                </div>
-                <div class="service-content">
-                    <div class="service-icon">📈</div>
-                    <div>
-                        <h3>User Growth</h3>
-                        <p>Attract and retain users by providing valuable tools, AI insights, and end-to-end support for successful exporting.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== NEWSLETTER ===================== -->
-<section class="newsletter">
-    <div class="newsletter-inner">
-        <div class="newsletter-text reveal-up">
-            <span class="newsletter-tag">Stay Updated</span>
-            <h2>Get the Latest AgriWay Updates</h2>
-            <p>Subscribe to our newsletter for market insights, export tips, and platform updates delivered to your inbox.</p>
-        </div>
-        <form class="newsletter-form reveal-up" style="animation-delay:0.15s" onsubmit="return false;">
-            <div class="newsletter-input-wrap">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit" class="btn-primary">
-                    Join Now
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-            </div>
-            <p class="newsletter-note">No spam. Unsubscribe anytime. 🌱</p>
-        </form>
-    </div>
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="testimonials" id="testimonials">
-    <div class="testimonials-inner">
-        <div class="section-tag reveal-up">Social Proof</div>
-        <h2 class="section-heading reveal-up">What They Say</h2>
-        <p class="section-sub reveal-up">Real feedback from farmers and buyers using AgriWay Export.</p>
-
-        <div class="testi-grid">
-            <div class="testi-card reveal-up" style="animation-delay:0.1s">
-                <div class="testi-quote">❝</div>
-                <p class="testi-text">AgriWay completely transformed how I sell my cassava harvest. I connected with a buyer in Germany within two weeks — something that would have taken months through traditional channels.</p>
-                <div class="testi-footer">
-                    <img src="assets/avatar-04.webp.svg" alt="Bonnie Tolbet" class="testi-avatar">
-                    <div>
-                        <strong>Bonnie Tolbet</strong>
-                        <span>International Buyer, Germany</span>
-                    </div>
-                    <div class="testi-stars">★★★★★</div>
-                </div>
-            </div>
-
-            <div class="testi-card testi-card-featured reveal-up" style="animation-delay:0.2s">
-                <div class="testi-quote">❝</div>
-                <p class="testi-text">The AI-driven pricing insights alone saved me from a bad deal. Now I know exactly when and where to sell. AgriWay is the future of agricultural trade in Africa.</p>
-                <div class="testi-footer">
-                    <img src="assets/avatar-05.webp.svg" alt="Sarah Albert" class="testi-avatar">
-                    <div>
-                        <strong>Sarah Albert</strong>
-                        <span>Farmer & Seller, Nigeria</span>
-                    </div>
-                    <div class="testi-stars">★★★★★</div>
-                </div>
-            </div>
-
-            <div class="testi-card reveal-up" style="animation-delay:0.3s">
-                <div class="testi-quote">❝</div>
-                <p class="testi-text">Secure transactions and transparent pricing — finally a platform that protects both buyers and farmers. Our procurement team now sources 40% of our produce through AgriWay.</p>
-                <div class="testi-footer">
-                    <div class="testi-avatar-placeholder">JK</div>
-                    <div>
-                        <strong>James Kofi</strong>
-                        <span>Procurement Manager, Ghana</span>
-                    </div>
-                    <div class="testi-stars">★★★★★</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer" id="contact">
-    <div class="footer-inner">
-
-        <div class="footer-brand">
-            <div class="footer-logo">
-                <img src="assets/Logo.svg" alt="AgriWay Logo">
-                <img src="assets/brandName.svg" alt="AgriWay" class="footer-brand-name">
-            </div>
-            <p class="footer-desc">Connecting local farmers with global markets through technology, transparency, and trust.</p>
-            <div class="footer-socials">
-                <a href="#" class="footer-social" aria-label="Twitter"><img src="assets/Vector (2).svg" alt="Twitter"></a>
-                <a href="#" class="footer-social" aria-label="Facebook"><img src="assets/Vector (3).svg" alt="Facebook"></a>
-                <a href="#" class="footer-social" aria-label="Instagram"><img src="assets/Vector (4).svg" alt="Instagram"></a>
-                <a href="#" class="footer-social" aria-label="LinkedIn"><img src="assets/Vector-5.svg" alt="LinkedIn"></a>
-            </div>
-        </div>
-
-        <div class="footer-col">
-            <h4>Explore</h4>
-            <ul>
-                <li><a href="#about"><img src="assets/leaf.svg" alt="">About</a></li>
-                <li><a href="#services"><img src="assets/leaf.svg" alt="">Services</a></li>
-                <li><a href="#solutions"><img src="assets/leaf.svg" alt="">Solutions</a></li>
-                <li><a href="#testimonials"><img src="assets/leaf.svg" alt="">Testimonials</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-                <li>
-                    <img src="assets/phone-icon.svg" alt="">
-                    <span>+234 813 787 2189</span>
-                </li>
-                <li>
-                    <img src="assets/messageEnvelope.svg" alt="">
-                    <span>hello@agriway.ng</span>
-                </li>
-                <li>
-                    <img src="assets/location.svg" alt="">
-                    <span>Lagos, Nigeria</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="footer-col footer-newsletter-col">
-            <h4>Newsletter</h4>
-            <p>Get weekly export tips and market updates.</p>
-            <div class="footer-input-wrap">
-                <input type="email" placeholder="Your email">
-                <button aria-label="Subscribe">
-                    <img src="assets/arrowRight.svg" alt="Subscribe">
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="footer-bottom">
-        <p>&copy; <span id="footer-year"></span> AgriWay Export. All rights reserved.</p>
-        <div class="footer-bottom-links">
-            <a href="#">Terms of Use</a>
-            <span>|</span>
-            <a href="#">Privacy Policy</a>
-        </div>
-    </div>
-
-    <!-- Back to top -->
-    <div class="footer-btt-row">
-        <a href="#hero" class="back-to-top" id="backToTop">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-            Back to Top
-        </a>
-    </div>
-
-    <!-- Big Mogula watermark -->
-    <div class="footer-watermark" aria-hidden="true">AgriWay</div>
-</footer>
-
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
