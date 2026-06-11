@@ -1,5 +1,9 @@
 // AgriWay Export — scripts.js
 
+// Dynamic footer year
+var yearEl = document.getElementById('footerYear');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 var hamburger = document.getElementById('hamburger');
 var mobileNav = document.getElementById('mobileNav');
 
